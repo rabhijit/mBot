@@ -1,0 +1,134 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fnil\fcharset0 Consolas;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red115\green0\blue2;\red0\green0\blue0;\red16\green121\blue2;
+\red82\green0\blue83;\red83\green85\blue2;\red11\green84\blue83;\red0\green0\blue117;}
+{\*\expandedcolortbl;;\cssrgb\c53333\c0\c0;\cssrgb\c0\c0\c0;\cssrgb\c0\c53333\c0;
+\cssrgb\c40000\c0\c40000;\cssrgb\c40000\c40000\c0;\cssrgb\c0\c40000\c40000;\cssrgb\c0\c0\c53333;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww12440\viewh9480\viewkind0
+\deftab720
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0\fs24 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 // LED flasher\
+\
+#include\cf3 \strokec3  \cf4 \strokec4 <MeMCore.h>
+\f1 \cf3 \strokec3 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf3 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0 \cf5 \strokec5 MeRGBLed\cf3 \strokec3  led\cf6 \strokec6 (\cf7 \strokec7 0\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 30\cf6 \strokec6 );\
+\pard\pardeftab720\sl280\partightenfactor0
+\cf5 \outl0\strokewidth0 MeLightSensor\cf3  lightSensor\cf6 (\cf3 PORT_8\cf6 );
+\f1 \cf3 \outl0\strokewidth0 \strokec3 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf3 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0 \cf8 \strokec8 void\cf3 \strokec3  setup\cf6 \strokec6 ()
+\f1 \cf3 \strokec3 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0 \cf3 \{
+\f1 \
+
+\f0  \'a0led\cf6 \strokec6 .\cf3 \strokec3 setpin\cf6 \strokec6 (\cf7 \strokec7 13\cf6 \strokec6 );
+\f1 \cf3 \strokec3 \
+
+\f0 \}
+\f1 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf3 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0 \cf8 \strokec8 void\cf3 \strokec3  loop\cf6 \strokec6 ()
+\f1 \cf3 \strokec3 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0 \cf3 \{
+\f1 \
+
+\f0  \'a0led\cf6 \strokec6 .\cf3 \strokec3 setColor\cf6 \strokec6 (\cf7 \strokec7 255\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 255\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 255\cf6 \strokec6 );\cf3 \strokec3  \cf2 \strokec2 //Set both LED to White
+\f1 \cf3 \strokec3 \
+
+\f0  \'a0led\cf6 \strokec6 .\cf3 \strokec3 show\cf6 \strokec6 ();\cf3 \strokec3  \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf2 \strokec2 //Must use .show() to make new colour take effect.
+\f1 \cf3 \strokec3 \
+
+\f0  \'a0delay\cf6 \strokec6 (\cf7 \strokec7 500\cf6 \strokec6 );
+\f1 \cf3 \strokec3 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf3 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0 \cf3  \'a0led\cf6 \strokec6 .\cf3 \strokec3 setColorAt\cf6 \strokec6 (\cf7 \strokec7 0\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 255\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 0\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 0\cf6 \strokec6 );\cf3 \strokec3  \cf2 \strokec2 //Set LED0 (RGBLED1) (RightSide) to Red
+\f1 \cf3 \strokec3 \
+
+\f0  \'a0led\cf6 \strokec6 .\cf3 \strokec3 setColorAt\cf6 \strokec6 (\cf7 \strokec7 1\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 0\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 0\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 255\cf6 \strokec6 );\cf3 \strokec3  \cf2 \strokec2 //Set LED1 (RGBLED2) (LeftSide) \'a0to Blue
+\f1 \cf3 \strokec3 \
+
+\f0  \'a0led\cf6 \strokec6 .\cf3 \strokec3 show\cf6 \strokec6 ();
+\f1 \cf3 \strokec3 \
+
+\f0  \'a0delay\cf6 \strokec6 (\cf7 \strokec7 500\cf6 \strokec6 );
+\f1 \cf3 \strokec3 \
+\pard\pardeftab720\sl280\partightenfactor0
+\cf3 \
+\pard\pardeftab720\sl320\partightenfactor0
+
+\f0 \cf3  \'a0led\cf6 \strokec6 .\cf3 \strokec3 setColorAt\cf6 \strokec6 (\cf7 \strokec7 0\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 0\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 0\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 255\cf6 \strokec6 );\cf3 \strokec3  \cf2 \strokec2 //Set LED0 (RGBLED1) (RightSide) to Blue
+\f1 \cf3 \strokec3 \
+
+\f0  \'a0led\cf6 \strokec6 .\cf3 \strokec3 setColorAt\cf6 \strokec6 (\cf7 \strokec7 1\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 255\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 0\cf6 \strokec6 ,\cf3 \strokec3  \cf7 \strokec7 0\cf6 \strokec6 );\cf3 \strokec3  \cf2 \strokec2 //Set LED1 (RGBLED2) (LeftSide) \'a0to Red
+\f1 \cf3 \strokec3 \
+
+\f0  \'a0led\cf6 \strokec6 .\cf3 \strokec3 show\cf6 \strokec6 ();
+\f1 \cf3 \strokec3 \
+
+\f0  \'a0delay\cf6 \strokec6 (\cf7 \strokec7 500\cf6 \strokec6 );
+\f1 \cf3 \strokec3 \
+
+\f0 \}
+\f1 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0 \cf2 \strokec2 \
+\
+// light intensity sensor
+\f1 \cf3 \strokec3 \
+\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0 \cf8 \strokec8 void\cf3 \strokec3  setup\cf6 \strokec6 ()
+\f1 \cf3 \strokec3 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0 \cf3 \{
+\f1 \
+
+\f0  \'a0\cf5 \strokec5 Serial\cf6 \strokec6 .\cf8 \strokec8 begin\cf6 \strokec6 (\cf7 \strokec7 9600\cf6 \strokec6 );
+\f1 \cf3 \strokec3 \
+
+\f0 \}
+\f1 \
+\
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0 \cf8 \strokec8 void\cf3 \strokec3  loop\cf6 \strokec6 ()
+\f1 \cf3 \strokec3 \
+\pard\pardeftab720\sl280\partightenfactor0
+
+\f0 \cf3 \{
+\f1 \
+
+\f0  \'a0\cf5 \strokec5 Serial\cf6 \strokec6 .\cf8 \strokec8 print\cf6 \strokec6 (\cf4 \strokec4 "value = "\cf6 \strokec6 );\cf3 \strokec3  \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf2 \strokec2 // Print the results to the serial monitor
+\f1 \cf3 \strokec3 \
+
+\f0  \'a0\cf5 \strokec5 Serial\cf6 \strokec6 .\cf3 \strokec3 println\cf6 \strokec6 (\cf3 \strokec3 lightSensor\cf6 \strokec6 .\cf3 \strokec3 read\cf6 \strokec6 ());\cf3 \strokec3  \cf2 \strokec2 // Brightness value from 0-1023
+\f1 \cf3 \strokec3 \
+
+\f0  \'a0delay\cf6 \strokec6 (\cf7 \strokec7 50\cf6 \strokec6 );\cf3 \strokec3  \'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\'a0\cf2 \strokec2 // Wait 50 milliseconds before next measurement
+\f1 \cf3 \strokec3 \
+
+\f0 \}
+\f1 \
+}
